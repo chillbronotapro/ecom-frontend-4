@@ -3,7 +3,7 @@ import axios from "axios";
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
-    name: "",
+    prodName: "",
     brand: "",
     description: "",
     price: "",
@@ -62,7 +62,7 @@ const AddProduct = () => {
             className="form-control"
             placeholder="Product Name"
             onChange={handleInputChange}
-            value={product.name}
+            value={product.prodName}
             name="name"
           />
         </div>
@@ -121,6 +121,7 @@ const AddProduct = () => {
             id="category"
           >
             <option value="">Select category</option>
+            <option value="Car">Car</option>
             <option value="Laptop">Laptop</option>
             <option value="Headphone">Headphone</option>
             <option value="Mobile">Mobile</option>

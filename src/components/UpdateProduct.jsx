@@ -8,7 +8,7 @@ const UpdateProduct = () => {
   const [image, setImage] = useState();
   const [updateProduct, setUpdateProduct] = useState({
     id: null,
-    name: "",
+    prodName: "",
     description: "",
     brand: "",
     price: "",
@@ -109,8 +109,8 @@ const UpdateProduct = () => {
             <input
               type="text"
               className="form-control"
-              placeholder={product.name}
-              value={updateProduct.name}
+              placeholder={product.prodName}
+              value={updateProduct.prodName}
               onChange={handleChange}
               name="name"
             />
@@ -169,12 +169,13 @@ const UpdateProduct = () => {
               id="category"
             >
               <option value="">Select category</option>
-              <option value="laptop">Laptop</option>
-              <option value="headphone">Headphone</option>
-              <option value="mobile">Mobile</option>
-              <option value="electronics">Electronics</option>
-              <option value="toys">Toys</option>
-              <option value="fashion">Fashion</option>
+              <option value="Car">Car</option>
+              <option value="Laptop">Laptop</option>
+              <option value="Headphone">Headphone</option>
+              <option value="Mobile">Mobile</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Toys">Toys</option>
+              <option value="Fashion">Fashion</option>
             </select>
           </div>
 

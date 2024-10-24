@@ -21,6 +21,7 @@ const Home = ({ selectedCategory }) => {
         const updatedProducts = await Promise.all(
           data.map(async (product) => {
             try {
+              axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
               const response = await axios.get(
                 `http://localhost:8080/api/product/${product.id}/image`,
                 { responseType: "blob" }
@@ -71,7 +72,7 @@ const Home = ({ selectedCategory }) => {
           </h2>
         ) : (
           filteredProducts.map((product) => {
-            const { id, brand, name, price, productAvailable, imageUrl } =
+            const { id, brand, prodName, price, productAvailable, imageUrl } =
               product;
             const cardStyle = {
               width: "18rem",
@@ -99,7 +100,7 @@ const Home = ({ selectedCategory }) => {
                 >
                   <img
                     src={imageUrl}
-                    alt={name}
+                    alt={prodName}
                     style={{
                       width: "100%",
                       height: "180px",
@@ -137,7 +138,7 @@ const Home = ({ selectedCategory }) => {
                         className="card-title"
                         style={{ margin: "0 0 10px 0" }}
                       >
-                        {name.toUpperCase()}
+                        {prodName.toUpperCase()}
                       </h5>
                       <i className="card-brand" style={{ fontStyle: "italic" }}>
                         {"~ " + brand}
